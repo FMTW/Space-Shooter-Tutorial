@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Rigidbody rb;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private float speed;
+
+    private void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+
+        rb.velocity = transform.forward * speed;
     }
 }
